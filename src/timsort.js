@@ -908,8 +908,8 @@ class TimSort {
  *     comparator.
  */
 export function sort(array, compare, lo, hi) {
-  if (!Array.isArray(array)) {
-    throw new TypeError('Can only sort arrays');
+  if (!Array.isArray(array) && !ArrayBuffer.isView(array)) {
+    throw new TypeError('Can only sort arrays or typed arrays');
   }
 
   /*
